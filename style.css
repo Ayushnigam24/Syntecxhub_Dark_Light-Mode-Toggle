@@ -1,0 +1,73 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-bg: #f3f3f3;
+}
+
+/* Dark Theme */
+body.dark {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --card-bg: #1e293b;
+}
+
+* {
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Toggle Switch */
+.toggle {
+  width: 70px;
+  height: 35px;
+  background: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  margin: 20px auto;
+}
+
+.toggle::before {
+  content: "☀️";
+  width: 30px;
+  height: 30px;
+  background: white;
+  position: absolute;
+  top: 2.5px;
+  left: 3px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+body.dark .toggle {
+  background: #334155;
+}
+
+body.dark .toggle::before {
+  content: "🌙";
+  transform: translateX(35px);
+  background: #020617;
+  color: white;
+}
